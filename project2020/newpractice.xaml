@@ -1,0 +1,117 @@
+﻿<Window x:Class="project2020.newpractice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        Title="newpractice" Height="450" Width="800" WindowState="Maximized">
+    <Viewbox Stretch="Fill">
+        <Grid Height="421" Width="794" x:Name="grid1">
+            <Grid.Background>
+                <ImageBrush ImageSource="IMG1/class.png"/>
+            </Grid.Background>
+
+            <Image x:Name="savfe" HorizontalAlignment="Left" Height="333" VerticalAlignment="Top" Width="560" Source="IMG1/bbb.png" Margin="131,0,0,0" MouseDown="save_Click"/>
+
+
+            <Image x:Name="back" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="137" Source="IMG1\back.png" Margin="672,39,-15,0" MouseDown="back_Click" ToolTip="חזרה לתפריט"/>
+            <Image x:Name="bdk" HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="109" Source="IMG1/solve.png" Margin="364,300,0,0" MouseDown="bdk_MouseDown" ToolTip="בדיקת פתרון" />
+            <Image x:Name="save" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="141" Source="IMG1/save.png" Margin="672,111,-19,0" MouseDown="save_Click" ToolTip="שמירת תרגיל"/>
+            <Image x:Name="help"  HorizontalAlignment="Left" Margin="672,188,0,0" VerticalAlignment="Top" Source="IMG1/expl.png"  Width="52" MouseDown="help_Click" Height="54" ToolTip="עזרה"/>
+            <Image x:Name="volume"  HorizontalAlignment="Left" Margin="672,266,0,0" VerticalAlignment="Top" Source="IMG1/volume.png"  Width="52" MouseDown="volume_MouseDown" Height="58" ToolTip="השתקת צלילים"/>
+            <Image x:Name="close"  HorizontalAlignment="Left" Margin="117,13,0,0" VerticalAlignment="Top" Source="IMG1/close.png"  Width="52" MouseDown="close_MouseDown" Height="64" RenderTransformOrigin="0.846,0.422" ToolTip="יציאה"/>
+
+            <Grid  HorizontalAlignment="Left" Height="212" Margin="283,54,0,0" VerticalAlignment="Top" Width="210"   RenderTransformOrigin="0.599,0.379" x:Name="grid2"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="13*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="144*"/>
+                </Grid.RowDefinitions>
+
+
+                <!--<Grid.Background>
+                    <ImageBrush ImageSource="C:\Users\user\Documents\ליבי\project2020\project2020\project2020\IMG\מרבב 4.png"/>
+                </Grid.Background>-->
+
+            </Grid>
+
+
+
+
+            <!--משווה גודל כפתורים-->
+            <!--<Image Name="c1" Source="IMG/c1.png" MouseDown="removePattern_MouseDown" ToolTip="הסר שבלונה" Margin="302,37,448,295" RenderTransformOrigin="0.622,0.779"/>
+            <Image Name="c2" Source="c0.png" MouseDown="removePattern_MouseDown" ToolTip="הסר שבלונה" Margin="397,23,353,309" RenderTransformOrigin="0.622,0.779"/>
+            <Image Name="y1" Source="00.png" MouseDown="removePattern_MouseDown" ToolTip="הסר שבלונה" Margin="328,222,435,119" RenderTransformOrigin="0.622,0.779"/>
+            <Image Name="y2" Source="00.png" MouseDown="removePattern_MouseDown" ToolTip="הסר שבלונה" Margin="372,222,391,119" RenderTransformOrigin="-0.544,0.491"/>
+            <Image Name="y3" Source="00.png" MouseDown="removePattern_MouseDown" ToolTip="הסר שבלונה" Margin="416,222,347,119"/>-->
+            <!--כפתורים מפענח 2-->
+            <!--<Image Name="c1" Source="IMG/c1.png"  ToolTip="הסר שבלונה" Margin="245,83,505,249" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="245,151,505,181" RenderTransformOrigin="0.622,0.779"/>
+            <Image Name="y3" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="493,62,270,279"/>
+            <Image x:Name="y3_Copy" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="493,102,270,238"/>
+            <Image x:Name="y3_Copy1" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="493,144,270,197"/>
+            <Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="493,184,270,155"/>-->
+            <!--כפתורים מפענח 3-->
+            <!--<Image Name="c1" Source="IMG/c1.png"  ToolTip="הסר שבלונה" Margin="210,87,515,293" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,175,277,188" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,149,277,213" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy1" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,123,277,238" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy3" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,96,277,264" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy4" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,71,277,289" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy5" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,46,277,314" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy6" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,199,277,161" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy7" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,224,277,136" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy8" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="494,123,277,237.667" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="c1_Copy1" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="210,145,515,234" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="210,204,515,174" RenderTransformOrigin="0.622,0.779"/>-->
+
+            <!--<Image x:Name="y3_Copy8" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="505,36,276,342" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="505,49,276,328" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy1" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="505,62,276,314" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="505,76,276,300" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="c1_Copy" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="209,68,523,312" RenderTransformOrigin="0.622,0.779"></Image>
+            <Image x:Name="c1_Copy1" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="209,118,523,261" RenderTransformOrigin="0.622,0.779"/>-->
+            <!--מחבר מלא-->
+            <!--<Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="269,230,495,139" RenderTransformOrigin="0.866,0.638"/>
+            <Image x:Name="y3_Copy" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="364,237,400,131" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="c1_Copy1" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="328,52,420,330" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="381,52,367,330" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy2" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="446,52,302,330" RenderTransformOrigin="0.622,0.779"/>-->
+
+            <!--חצי מחבר
+            <Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="269,237,495,132" RenderTransformOrigin="0.866,0.638"/>
+            <Image x:Name="y3_Copy" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="381,237,383,131" RenderTransformOrigin="0.61,0.743"/>
+            <Image x:Name="c1_Copy1" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="340,52,408,330" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="401,52,347,330" RenderTransformOrigin="0.622,0.779"/>-->
+
+            <!--מרבב2-->
+            <!--
+            <Image x:Name="y3_Copy1" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="480,98,283,243"/>
+            <Image x:Name="c1_Copy" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="250,45,500,287" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy1" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="250,76,500,255" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy2" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="250,109,500,222" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy3" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="250,143,500,188" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c2_Copy4" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="334,222,416,108" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c2_Copy" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="378,222,372,107" RenderTransformOrigin="0.622,0.779"/>-->
+            <!--מרבב 3-->
+            <!--<Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="480,111,283,230"/>
+            <Image x:Name="cm_Copy1" Source="IMG/C1.png"  ToolTip="הסר שבלונה" Margin="262,64,505,326" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="263,83,504,306" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy1" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="263,102,504,286" RenderTransformOrigin="0.622,0.779"/>
+                מרבב4
+            <Image x:Name="c2_Copy4" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="323,246,430,126" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c2_Copy5" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="357,246,396,126" RenderTransformOrigin="0.622,0.779"/>-->
+
+            <!--<Image x:Name="y3_Copy2" Source="IMG/00.png"  ToolTip="הסר שבלונה" Margin="493,107,270,234"/>
+            
+            <Image x:Name="c1_Copy1" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="268,48,506,341" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c1_Copy" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="268,58,506,330" RenderTransformOrigin="0.622,0.779"/>
+            
+            <Image x:Name="c_Copy3" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="328,254,437,128" RenderTransformOrigin="0.622,0.779"/>
+            <Image x:Name="c_Copy" Source="IMG/C0.png"  ToolTip="הסר שבלונה" Margin="357,254,408,127" RenderTransformOrigin="0.622,0.779"/>-->
+
+        </Grid>
+    </Viewbox>
+</Window>

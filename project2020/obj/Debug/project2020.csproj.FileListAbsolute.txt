@@ -1,0 +1,80 @@
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\project2020.exe.config
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\project2020.exe
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\project2020.pdb
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\BL.dll
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\BL.pdb
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.csprojAssemblyReference.cache
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\failmessage.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\Illustration.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\MainWindow.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\newpractice.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\savedpractice.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\savepractice.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\successmessage.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\typeselection.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\Window1.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\App.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020_Content.g.cs
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020_MarkupCompile.cache
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020_MarkupCompile.lref
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\failmessage.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\Illustration.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\MainWindow.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\newpractice.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\savedpractice.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\savepractice.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\successmessage.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\typeselection.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\Window1.baml
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.g.resources
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.Properties.Resources.resources
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.csproj.GenerateResource.cache
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.csproj.CoreCompileInputs.cache
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.csproj.CopyComplete
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.exe
+C:\Users\orly wienstein\wpf\project2020\obj\Debug\project2020.pdb
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\DAL.dll
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\EntityFramework.dll
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\DAL.pdb
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\DAL.dll.config
+C:\Users\orly wienstein\wpf\project2020\bin\Debug\EntityFramework.xml
+C:\Users\Public\wpf\project2020\bin\Debug\project2020.exe.config
+C:\Users\Public\wpf\project2020\bin\Debug\project2020.exe
+C:\Users\Public\wpf\project2020\bin\Debug\project2020.pdb
+C:\Users\Public\wpf\project2020\bin\Debug\BL.dll
+C:\Users\Public\wpf\project2020\bin\Debug\DAL.dll
+C:\Users\Public\wpf\project2020\bin\Debug\EntityFramework.dll
+C:\Users\Public\wpf\project2020\bin\Debug\BL.pdb
+C:\Users\Public\wpf\project2020\bin\Debug\DAL.pdb
+C:\Users\Public\wpf\project2020\bin\Debug\DAL.dll.config
+C:\Users\Public\wpf\project2020\bin\Debug\EntityFramework.xml
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.csprojAssemblyReference.cache
+C:\Users\Public\wpf\project2020\obj\Debug\failmessage.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\Illustration.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\MainWindow.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\newpractice.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\savedpractice.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\savepractice.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\successmessage.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\typeselection.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\Window1.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\App.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\project2020_Content.g.cs
+C:\Users\Public\wpf\project2020\obj\Debug\project2020_MarkupCompile.cache
+C:\Users\Public\wpf\project2020\obj\Debug\project2020_MarkupCompile.lref
+C:\Users\Public\wpf\project2020\obj\Debug\failmessage.baml
+C:\Users\Public\wpf\project2020\obj\Debug\Illustration.baml
+C:\Users\Public\wpf\project2020\obj\Debug\MainWindow.baml
+C:\Users\Public\wpf\project2020\obj\Debug\newpractice.baml
+C:\Users\Public\wpf\project2020\obj\Debug\savedpractice.baml
+C:\Users\Public\wpf\project2020\obj\Debug\savepractice.baml
+C:\Users\Public\wpf\project2020\obj\Debug\successmessage.baml
+C:\Users\Public\wpf\project2020\obj\Debug\typeselection.baml
+C:\Users\Public\wpf\project2020\obj\Debug\Window1.baml
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.g.resources
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.Properties.Resources.resources
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.csproj.GenerateResource.cache
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.csproj.CoreCompileInputs.cache
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.csproj.CopyComplete
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.exe
+C:\Users\Public\wpf\project2020\obj\Debug\project2020.pdb

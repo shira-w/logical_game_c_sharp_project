@@ -1,0 +1,17 @@
+C:\Users\orly wienstein\wpf\BL\bin\Debug\BL.dll
+C:\Users\orly wienstein\wpf\BL\bin\Debug\BL.pdb
+C:\Users\orly wienstein\wpf\BL\bin\Debug\DAL.dll
+C:\Users\orly wienstein\wpf\BL\bin\Debug\EntityFramework.dll
+C:\Users\orly wienstein\wpf\BL\bin\Debug\DAL.pdb
+C:\Users\orly wienstein\wpf\BL\bin\Debug\DAL.dll.config
+C:\Users\orly wienstein\wpf\BL\bin\Debug\EntityFramework.xml
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\orly wienstein\wpf\BL\obj\Debug\Interop.EnvDTE.dll
+C:\Users\orly wienstein\wpf\BL\obj\Debug\Interop.NETCONLib.dll
+C:\Users\orly wienstein\wpf\BL\obj\Debug\Interop.VSLangProj.dll
+C:\Users\orly wienstein\wpf\BL\obj\Debug\Interop.VSLangProj2.dll
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.csproj.ResolveComReference.cache
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.dll
+C:\Users\orly wienstein\wpf\BL\obj\Debug\BL.pdb

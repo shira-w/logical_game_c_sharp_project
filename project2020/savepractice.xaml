@@ -1,0 +1,24 @@
+﻿<Window x:Class="project2020.savepractice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        Title="savepractice" Height="450" Width="760">
+    <Viewbox Stretch="Fill">
+        <Grid Height="420.666666666667" Width="770.333333333333">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="89*"/>
+                <RowDefinition Height="51*"/>
+            </Grid.RowDefinitions>
+            <Grid.Background>
+                <ImageBrush ImageSource="IMG1/asave.png"/>
+            </Grid.Background>
+
+            <Image x:Name="close"  Source="IMG1/close.png" HorizontalAlignment="Left" Margin="34,25,0,0" VerticalAlignment="Top" Width="145" Height="63" MouseDown="savep_Click" RenderTransformOrigin="0.839,0.605" ToolTip="יציאה"/>
+            <Image x:Name="h"  Source="IMG1/oks.png" HorizontalAlignment="Left" Margin="299,4.743,0,0" VerticalAlignment="Top" Width="171" Height="72" MouseDown="savep_Click" Grid.Row="1"/>
+            <TextBox HorizontalAlignment="Left" Height="46" Margin="299,192,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="194" x:Name="tname" BorderThickness="0" MaxLength="16" Background="Transparent"  FontSize="22" TextChanged="tname_TextChanged" Foreground ="White" HorizontalContentAlignment="Right"/>
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="project2020.failmessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        Title="failmessage" Height="420" Width="550">
+    <Viewbox Stretch="Fill">
+        <Grid Height="421" Width="439">
+            <Grid.Background>
+                <ImageBrush ImageSource="IMG1/fail.png"/>
+            </Grid.Background>
+            <Image x:Name="close"  HorizontalAlignment="Left" Margin="25,32,0,0" VerticalAlignment="Top" Source="IMG1/df.png"  Width="43" MouseDown="close_c" Height="101" RenderTransformOrigin="0.846,0.422" ToolTip="סגור"/>
+
+            <Image x:Name="ok"  HorizontalAlignment="Left" Margin="174,342,0,-150" VerticalAlignment="Top" Source="IMG1/okss.png"  Width="97" MouseDown="close_c" Height="229" RenderTransformOrigin="0.846,0.422" ToolTip="סגור"/>
+
+
+
+
+
+
+
+            <!--<Button x:Name="newp" Content="תרגיל נוסף" HorizontalAlignment="Left" Margin="550,325,0,0" VerticalAlignment="Top" Width="99" Height="50" Click="newp_Click"/>
+            <Button x:Name="save" Content="שמירת תרגיל" HorizontalAlignment="Left" Margin="160,325,0,0" VerticalAlignment="Top" Width="99" Height="50" Click="save_Click"/>
+            <Button x:Name="showsolution" Content="הצג פתרון" HorizontalAlignment="Left" Margin="290,325,0,0" VerticalAlignment="Top" Width="99" Height="50" Click="showsolution_Click"/>
+            <Button x:Name="tryagain" Content="נסה שוב" HorizontalAlignment="Left" Margin="420,325,0,0" VerticalAlignment="Top" Width="99" Height="50" Click="tryagain_Click"/>-->
+        </Grid>
+    </Viewbox>
+</Window>

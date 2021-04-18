@@ -1,0 +1,27 @@
+﻿<Window x:Class="project2020.successmessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        
+
+
+
+    Title="failmessage" Height="420" Width="550">
+    <Viewbox Stretch="Fill">
+        <Grid Height="421" Width="439">
+            <Grid.Background>
+                <ImageBrush ImageSource="IMG1/yay.png"/>
+            </Grid.Background>
+            
+            <Image x:Name="close"  HorizontalAlignment="Left" Margin="25,32,0,0" VerticalAlignment="Top" Source="IMG1/df.png"  Width="43" MouseDown="close_cc" Height="101" RenderTransformOrigin="0.846,0.422" ToolTip="סגור"/>
+
+            <Image x:Name="ok"  HorizontalAlignment="Left" Margin="178,337,0,-145" VerticalAlignment="Top" Source="IMG1/okss.png"  Width="97" MouseDown="close_cc" Height="229" RenderTransformOrigin="0.846,0.422" ToolTip="סגור"/>
+        </Grid>
+    </Viewbox>
+
+
+
+</Window>

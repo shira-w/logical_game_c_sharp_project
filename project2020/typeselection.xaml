@@ -1,0 +1,42 @@
+﻿<Window x:Class="project2020.typeselection"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        Title="typeselection" Height="450" Width="800" WindowState="Maximized">
+    <Viewbox Stretch="Fill">
+        <Grid  x:Name="grid1" Height="420.666666666667" Width="793.333333333333">
+            <Grid.Background>
+                <ImageBrush ImageSource="IMG1/select.png"/>
+            </Grid.Background>
+
+            <Image x:Name="merabev" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="98" Source="IMG1\מרבב.png" Margin="543,134,0,0" MouseDown="mrbv_click" RenderTransformOrigin="0.486,0.667"/>
+            <Image x:Name="mefaaneah" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="103" Source="IMG1/מפענח.png" Margin="387,134,0,0" MouseDown="mfan_click"/>
+            <Image x:Name="hmechaber" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="105" Source="IMG1/חצי מחבר.png" Margin="246,218,0,0" MouseDown="hemchaber_click"/>
+            <Image x:Name="mechaber" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="106" Source="IMG1/מחבר מלא.png" Margin="388,220,0,0" MouseDown="mechaber_click"/>
+            <Image x:Name="mg" HorizontalAlignment="Left" Height="53" VerticalAlignment="Top" Width="106" Source="IMG1/משוה גודל.png" Margin="540,219,0,0" MouseDown="mg_click"/>
+            <Image x:Name="mkdd" HorizontalAlignment="Left" Height="91" VerticalAlignment="Top" Width="103" Source="IMG1/מקודד.png" Margin="246,134,0,0" MouseDown="mkdd_MouseDown"/>
+
+            <Image x:Name="merabev2" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="98" Source="IMG1\מרבב.png" Margin="388,137,0,0" MouseDown="mrbv_click" Visibility="Hidden" />
+            <Image x:Name="mefaaneah2" HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="103" Source="IMG1/מפענח.png" Margin="388,137,0,0" MouseDown="mfan_click" Visibility="Hidden"/>
+            <Image x:Name="mkdd2" HorizontalAlignment="Left" Height="91" VerticalAlignment="Top" Width="103" Source="IMG1/מקודד.png" Margin="388,137,0,0" MouseDown="mg_click" Visibility="Hidden"/>
+
+
+            <Image x:Name="tw" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="83" Source="IMG1/2.png" Margin="483,218,0,0" MouseDown="tw_click" Visibility="Hidden" />
+            <Image x:Name="th" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="83" Source="IMG1/3.png" Margin="411,218,0,0" MouseDown="th_click" Visibility="Hidden" />
+            <Image x:Name="f" HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="83" Source="IMG1/4.png" Margin="339,218,0,0" MouseDown="f_click" Visibility="Hidden" />
+
+            <Image x:Name="back" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="63" Source="IMG1\backselect.png" Margin="40,108,0,0" MouseDown="back_Click" ToolTip="חזרה"/>
+            <Image x:Name="close" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="63" Source="IMG1\close.png" Margin="40,22,0,0" MouseDown="close_MouseDown" ToolTip="יציאה"/>
+            <Image x:Name="info" HorizontalAlignment="Left" Height="52" VerticalAlignment="Top" Width="63" Source="IMG1\info.png" Margin="40,193,0,0" MouseDown="info_MouseDown" RenderTransformOrigin="0.476,0.752" ToolTip="הוראות"/>
+
+            <Image x:Name="ok" HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="127" Source="IMG1/okselect.png" Margin="377,306,0,0" MouseDown="ok_click"/>
+
+            <MediaElement Height="120" Margin="10,10,108,0" LoadedBehavior="Play"  Name="mediaElement1" VerticalAlignment="Top" Visibility="Hidden"/>
+
+
+        </Grid>
+    </Viewbox>
+</Window>

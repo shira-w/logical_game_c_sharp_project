@@ -1,0 +1,20 @@
+﻿<Window x:Class="project2020.savedpractice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:project2020"
+        mc:Ignorable="d"
+        Title="savedpractice" Height="450" Width="800" WindowState="Maximized">
+    <Viewbox Stretch="Fill">
+        <Grid Height="420.666666666667" Width="793.333333333333">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="366*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid  Name="grdEmployee" HorizontalAlignment="Left" Height="208" Margin="200.45,119,0,0" VerticalAlignment="Top" Width="250" Grid.Column="1" SelectionChanged="grdEmployee_SelectionChanged" MouseRightButtonUp="DataGrid_MouseRightButtonUp_1" />
+            <Button Content="אישור"  HorizontalAlignment="Left" Margin="38.45,344,0,0" VerticalAlignment="Top" Width="50" Height="40" Grid.Column="1" MouseDown="ok_click"/>
+            <Button x:Name="back" Content="חזרה"  HorizontalAlignment="Right" Margin="0,344,140.333,0" VerticalAlignment="Top" Width="50" Height="40" Click="back_Click" Grid.Column="1"/>
+        </Grid>
+    </Viewbox>
+</Window>

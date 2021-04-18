@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B67C5FE-D9D8-439D-8361-AD1592C65A32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>project2020</RootNamespace>
+    <AssemblyName>project2020</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="binaributton.cs" />
+    <Compile Include="failmessage.xaml.cs">
+      <DependentUpon>failmessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Illustration.xaml.cs">
+      <DependentUpon>Illustration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="newpractice.xaml.cs">
+      <DependentUpon>newpractice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="savedpractice.xaml.cs">
+      <DependentUpon>savedpractice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="savepractice.xaml.cs">
+      <DependentUpon>savepractice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="successmessage.xaml.cs">
+      <DependentUpon>successmessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="typeselection.xaml.cs">
+      <DependentUpon>typeselection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="failmessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Illustration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="newpractice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="savedpractice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="savepractice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="successmessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="typeselection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{2cd9037c-5d4e-46b4-8670-eff6b4bd0aec}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\00.png" />
+    <Resource Include="IMG1\11.png" />
+    <Resource Include="IMG1\2.png" />
+    <Resource Include="IMG1\3.png" />
+    <Resource Include="IMG1\4.png" />
+    <Resource Include="IMG1\back.png" />
+    <Resource Include="IMG1\backselect.png" />
+    <Resource Include="IMG1\close.png" />
+    <Resource Include="IMG1\expl.png" />
+    <Resource Include="IMG1\illu.png" />
+    <Resource Include="IMG1\info.png" />
+    <Resource Include="IMG1\main.png" />
+    <Resource Include="IMG1\mainn.png" />
+    <Resource Include="IMG1\mm.png" />
+    <Resource Include="IMG1\okmain.png" />
+    <Resource Include="IMG1\okselect.png" />
+    <Resource Include="IMG1\pra.png" />
+    <Resource Include="IMG1\pract.png" />
+    <Resource Include="IMG1\save.png" />
+    <Resource Include="IMG1\savedp.png" />
+    <Resource Include="IMG1\select.png" />
+    <Resource Include="IMG1\size.png" />
+    <Resource Include="IMG1\solve.png" />
+    <Resource Include="IMG1\type.png" />
+    <Resource Include="IMG1\volume.png" />
+    <Resource Include="IMG1\מפענח.png" />
+    <Resource Include="IMG1\מקודד.png" />
+    <Resource Include="IMG1\מרבב.png" />
+    <Resource Include="IMG1\משוה גודל.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\class.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\bbb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\oks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\asave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\מפענח 2 כניסות.png" />
+    <Resource Include="IMG1\מפענח 3 כניסות.png" />
+    <Resource Include="IMG1\מפענח 4 כניסות.png" />
+    <Resource Include="IMG1\מרבב 2.png" />
+    <Resource Include="IMG1\מרבב 3.png" />
+    <Resource Include="IMG1\מרבב 4.png" />
+    <Resource Include="IMG1\משווה גודל.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\חצי מחבר.png" />
+    <Resource Include="IMG1\מחבר מלא.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\חציי מחבר.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\מחבר מלאא.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="IMG1\C0.png" />
+    <Resource Include="IMG1\C1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IMG1\11.mp3" />
+    <Resource Include="IMG1\מקודד 2.png" />
+    <Resource Include="IMG1\מקודד 3.png" />
+    <Resource Include="IMG1\מקודד 4.png" />
+    <Resource Include="IMG1\fail.png" />
+    <Resource Include="IMG1\saveq.png" />
+    <Resource Include="IMG1\sw.png" />
+    <Resource Include="IMG1\תמונה1.png" />
+    <Resource Include="IMG1\okss.png" />
+    <Resource Include="IMG1\yay.png" />
+    <Resource Include="IMG1\df.png" />
+    <Resource Include="IMG1\boad1.png" />
+    <Resource Include="IMG1\board.png" />
+    <Resource Include="IMG1\board1.png" />
+    <Resource Include="IMG1\clos1.png" />
+    <Content Include="IMG1\ding.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
