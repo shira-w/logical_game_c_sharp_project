@@ -12,8 +12,8 @@
                 <ColumnDefinition Width="31*"/>
                 <ColumnDefinition Width="366*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid  Name="grdEmployee" HorizontalAlignment="Left" Height="208" Margin="200.45,119,0,0" VerticalAlignment="Top" Width="250" Grid.Column="1" SelectionChanged="grdEmployee_SelectionChanged" MouseRightButtonUp="DataGrid_MouseRightButtonUp_1" />
-            <Button Content="אישור"  HorizontalAlignment="Left" Margin="38.45,344,0,0" VerticalAlignment="Top" Width="50" Height="40" Grid.Column="1" MouseDown="ok_click"/>
+            <DataGrid  Name="grdEmployee" HorizontalAlignment="Left" Height="208" Margin="200.45,119,0,0" VerticalAlignment="Top" Width="250" Grid.Column="1" SelectionChanged="grdEmployee_SelectionChanged" MouseDown="DataGrid_MouseRightButtonUp_1" />
+            <Button Content="אישור"  HorizontalAlignment="Left" Margin="38.45,344,0,0" VerticalAlignment="Top" Width="50" Height="40" Grid.Column="1" Click="ok_click"/>
             <Button x:Name="back" Content="חזרה"  HorizontalAlignment="Right" Margin="0,344,140.333,0" VerticalAlignment="Top" Width="50" Height="40" Click="back_Click" Grid.Column="1"/>
         </Grid>
     </Viewbox>

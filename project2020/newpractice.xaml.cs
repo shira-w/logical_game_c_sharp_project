@@ -21,6 +21,7 @@ namespace project2020
     public partial class newpractice : Window
     {
         const int type = 1;
+        bool anableAuodio = true;
         enum ResultType
         {
             SingleRes,
@@ -31,6 +32,7 @@ namespace project2020
         int rsize;
         public binaributton[] binaributtons;
         public Image[] carray=new Image[6];
+        private MediaPlayer mediaPlayer;
         public newpractice()
         {
             InitializeComponent();
@@ -113,7 +115,7 @@ namespace project2020
                 f++;
             }
             currentNArray = narrayComb;
-            currentType = "mg";
+            currentType = "Compares size";
             //Height = "166" Margin = "307,82,0,0" VerticalAlignment = "Top" Width = "164"
             grid2.Height = 166;
             grid2.Width = 164;
@@ -208,7 +210,7 @@ namespace project2020
                 carray[0].Margin = new Thickness(401, 52, 347, 330);
                 carray[1].Margin = new Thickness(340, 52, 408, 330);
                 currentNArray = tempNarray;
-                currentType = "hmechaber";
+                currentType = "Half connective";
                 grid2.Height = 165;
                 grid2.Width = 203;
                 grid2.Margin = new Thickness(276, 84, 0, 0);
@@ -221,7 +223,7 @@ namespace project2020
             //מחבר מלא....CIN
             else
             {
-                rtype = "mechaber";
+                rtype = "connective";
                 binaributton z = new binaributton(364, 237, 400, 131, 0, type);
                 grid1.Children.Add(z);
                 binaributton c = new binaributton(269, 230, 495, 139, 1, type);
@@ -243,7 +245,7 @@ namespace project2020
                 carray[1].Margin = new Thickness(381, 52, 367, 330);
                 carray[2].Margin = new Thickness(328, 52, 420, 330);
                 currentNArray = tempNarray;
-                currentType = "mechaber";
+                currentType = "connective";
                 grid2.Height = 165;
                 grid2.Width = 203;
                 grid2.Margin = new Thickness(276, 84, 0, 0);
@@ -337,6 +339,8 @@ namespace project2020
             currDeviceResType = ResultType.ArrayRes;
             rtype = "mefaaneah";
             binaributton[] binaributtons = new binaributton[(int)Math.Pow(2, size)];
+            
+            
             Image[] carray = new Image[size];
             int[] tempNarray = new int[size];
 
@@ -356,7 +360,7 @@ namespace project2020
                 grid1.Children.Add(carray[i]);
             }
             currentNArray = tempNarray;
-            currentType = "mefaaneah";
+            currentType = "Decoder";
             // set expected result
             BL.Class1.refOutputBinaryArr = BL.Class1.Decoder(BL.Class1.rndInputBinaryArr, BL.Class1.refOutputBinaryArr);
             
@@ -450,7 +454,7 @@ namespace project2020
                 f++;
             }
             currentNArray = NcarrayComb;
-            currentType = "merabev";
+            currentType = "Multiplexer";
             // set expected result
             BL.Class1.refOutputBinary = BL.Class1.Multiplexer(BL.Class1.rndInput2BinaryArr, BL.Class1.rndInputBinaryArr);
 
@@ -508,6 +512,86 @@ namespace project2020
             grid2.Background = myBrush;
             // set default output
             BL.Class1.outputBinary = 0;
+        }
+        //מקודד
+        public void addmkdd(int size, int ca, int cb, int cc, int cd, int ya, int yb, int yc, int yd, int hc, int hy, int gridh, int gridw, int grida, int gridb, int gridc, int gridd)
+        {
+            currDeviceResType = ResultType.ArrayRes;
+            rtype = "mkdd";
+            binaributton[] binaributtons = new binaributton[size];
+            Image[] carray = new Image[(int)Math.Pow(2, size)];
+            int[] tempNarray = new int[(int)Math.Pow(2, size)];
+            for (int i = 0; i < size; i++)
+            {
+                binaributtons[i] = new binaributton(ya, yb, yc, yd, i, type);
+                yb += hy; yd -= hy;
+                grid1.Children.Add(binaributtons[i]);
+            }
+
+            for (int i = 0; i < (int)Math.Pow(2, size); i++)
+            {
+                carray[i] = new Image();
+                carray[i].Margin = new Thickness(ca, cb, cc, cd);
+                cb += hc; cd -= hc;
+                random(carray, i,tempNarray, 0);
+                grid1.Children.Add(carray[i]);
+            }
+
+            //// set expected result
+            //BL.Class1.refOutputBinaryArr = BL.Class1.Decoder(BL.Class1.rndInputBinaryArr, BL.Class1.refOutputBinaryArr);
+            currentNArray = tempNarray;
+            currentType = "encoder";
+
+            grid2.Height = gridh;
+            grid2.Width = gridw;
+            grid2.Margin = new Thickness(grida, gridb, gridc, gridd);
+            ImageBrush myBrush = new ImageBrush();
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(@"../../IMG1/מקודד " + size + ".png", UriKind.Relative));
+            myBrush.ImageSource = image.Source;
+
+
+            grid2.Background = myBrush;
+
+
+        }
+        public void mkddAfterSave(int size, int ca, int cb, int cc, int cd, int ya, int yb, int yc, int yd, int hc, int hy, int gridh, int gridw, int grida, int gridb, int gridc, int gridd, int[]arr)
+        {
+            currDeviceResType = ResultType.ArrayRes;
+            rtype = "mkdd";
+            binaributton[] binaributtons = new binaributton[size];
+            Image[] carray = new Image[(int)Math.Pow(2, size)];
+            for (int i = 0; i < size; i++)
+            {
+                binaributtons[i] = new binaributton(ya, yb, yc, yd, i, type);
+                yb += hy; yd -= hy;
+                grid1.Children.Add(binaributtons[i]);
+            }
+
+            for (int i = 0; i < (int)Math.Pow(2, size); i++)
+            {
+                carray[i] = new Image();
+                carray[i].Margin = new Thickness(ca, cb, cc, cd);
+                cb += hc; cd -= hc;
+                addToImages(carray, i, arr);
+                grid1.Children.Add(carray[i]);
+            }
+
+            //// set expected result
+            //BL.Class1.refOutputBinaryArr = BL.Class1.Decoder(BL.Class1.rndInputBinaryArr, BL.Class1.refOutputBinaryArr);
+
+            grid2.Height = gridh;
+            grid2.Width = gridw;
+            grid2.Margin = new Thickness(grida, gridb, gridc, gridd);
+            ImageBrush myBrush = new ImageBrush();
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(@"../../IMG1/מקודד " + size + ".png", UriKind.Relative));
+            myBrush.ImageSource = image.Source;
+
+
+            grid2.Background = myBrush;
+
+
         }
 
         // הגרלת מספר בינארי והצגת תמונה מתאימה
@@ -591,11 +675,23 @@ namespace project2020
                 {
                     successmessage successmessage = new successmessage();
                     successmessage.Show();
+                    if (anableAuodio)
+                    {
+                        mediaPlayer = new MediaPlayer();
+                        mediaPlayer.Open(new Uri(@"3.mp3", UriKind.Relative));
+                        mediaPlayer.Play();
+                    }
                 }
                 else
                 {
                     failmessage failmessage = new failmessage();
                     failmessage.Show();
+                    if (anableAuodio)
+                    {
+                        mediaPlayer = new MediaPlayer();
+                        mediaPlayer.Open(new Uri(@"2.mp3", UriKind.Relative));
+                        mediaPlayer.Play();
+                    }
                 }
             }
             else
@@ -604,11 +700,24 @@ namespace project2020
                 {
                     successmessage successmessage = new successmessage();
                     successmessage.Show();
+                    if (anableAuodio)
+                    {
+                        mediaPlayer = new MediaPlayer();
+                        mediaPlayer.Open(new Uri(@"3.mp3", UriKind.Relative));
+                        mediaPlayer.Play();
+                    }
+
                 }
                 else
                 {
                     failmessage failmessage = new failmessage();
                     failmessage.Show();
+                    if (anableAuodio)
+                    {
+                        mediaPlayer = new MediaPlayer();
+                        mediaPlayer.Open(new Uri(@"2.mp3", UriKind.Relative));
+                        mediaPlayer.Play();
+                    }
                 }
             }
         }
@@ -620,13 +729,18 @@ namespace project2020
 
         private void volume_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            anableAuodio = !(anableAuodio);
+
+            
 
         }
+    
+ 
 
         private void close_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
         }
     }
-    }
+}
 

@@ -30,7 +30,7 @@ namespace project2020
         int rsize;
         public binaributton[] binaributtons;
         public Image[] carray = new Image[6];
-
+        public int first=0;
         // פונקציה להוספת משווה גודל
      
             public void illuaddmg(int size, int hc, int c1a, int c1b, int c1c, int c1d, int c2a, int c2b, int c2c, int c2d)
@@ -80,10 +80,6 @@ namespace project2020
 
 
             }
-
-       
-
-
 
             //חצי מחבר
             public void illuaddhzmechaber(int numof)
@@ -139,15 +135,8 @@ namespace project2020
                 image.Source = new BitmapImage(new Uri(@"../../IMG1/מחבר מלאא.png", UriKind.Relative));
                 myBrush.ImageSource = image.Source;
                 grid2.Background = myBrush;
-
             }
-
-
-
         }
-
-
-
 
         //מפענח
         public void illuaddmefaaneh(int size, int ca, int cb, int cc, int cd, int hc, int gridh, int gridw, int grida, int gridb, int gridc, int gridd)
@@ -169,6 +158,30 @@ namespace project2020
             ImageBrush myBrush = new ImageBrush();
             Image image = new Image();
             image.Source = new BitmapImage(new Uri(@"../../IMG1/מפענח " + size + " כניסות.png", UriKind.Relative));
+            myBrush.ImageSource = image.Source;
+            grid2.Background = myBrush;
+        }
+
+        //מקודד
+        public void illuaddmkdd(int size, int ca, int cb, int cc, int cd, int hc, int gridh, int gridw, int grida, int gridb, int gridc, int gridd)
+        {
+            rtype = "mkdd";
+            rsize = size;
+            binaributton[] binaributtons = new binaributton[(int)Math.Pow(2, size)];
+
+            for (int i = 0; i < (int)Math.Pow(2, size); i++)
+            {
+                binaributtons[i] = new binaributton(ca, cb, cc, cd, i, type);
+                cb += hc; cd -= hc;
+                grid11.Children.Add(binaributtons[i]);
+            }
+
+            grid2.Height = gridh;
+            grid2.Width = gridw;
+            grid2.Margin = new Thickness(grida, gridb, gridc, gridd);
+            ImageBrush myBrush = new ImageBrush();
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(@"../../IMG1/מקודד " + size + ".png", UriKind.Relative));
             myBrush.ImageSource = image.Source;
             grid2.Background = myBrush;
 
@@ -256,150 +269,160 @@ namespace project2020
 
         private void show_Result(object sender, RoutedEventArgs e)
         {
-            BL.Class1.ResetArray(BL.Class1.outputBinaryArr, BL.Class1.MaxEntries);
-            switch (rtype)
+            if (first == 0)
             {
-                case "mg":
-                    {
-                        // set expected result
-                        BL.Class1.outputBinaryArr = BL.Class1.MagnitudeComparator(BL.Class1.rndInputBinaryArr,
-                                                                                    BL.Class1.rndInput2BinaryArr,
-                                                                                    BL.Class1.outputBinaryArr);
-                        // show result
-                        int ca = 309, cc = 444;
-                        for (int i = 2; i >= 0; i--)
+                first = 1;
+                BL.Class1.ResetArray(BL.Class1.outputBinaryArr, BL.Class1.MaxEntries);
+
+                switch (rtype)
+                {
+                    case "mg":
                         {
-                            carray[i] = new Image();
-                            carray[i].Margin = new Thickness(ca, 235, cc, 120);
-                            ca += 52; cc -= 52;
-                            if (BL.Class1.outputBinaryArr[i] == 0)
+                            // set expected result
+                            BL.Class1.outputBinaryArr = BL.Class1.MagnitudeComparator(BL.Class1.rndInputBinaryArr,
+                                                                                        BL.Class1.rndInput2BinaryArr,
+                                                                                        BL.Class1.outputBinaryArr);
+                            // show result
+                            int ca = 309, cc = 444;
+                            for (int i = 2; i >= 0; i--)
                             {
-                                carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
+                                carray[i] = new Image();
+                                carray[i].Margin = new Thickness(ca, 235, cc, 120);
+                                ca += 52; cc -= 52;
+                                if (BL.Class1.outputBinaryArr[i] == 0)
+                                {
+                                    carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
+                                }
+                                else
+                                {
+                                    carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
+                                }
+                                grid11.Children.Add(carray[i]);
+
+                            }
+                            break;
+                        }
+                    case "hmechaber":
+                    case "mechaber":
+                        {
+                            // set expected result
+                            BL.Class1.outputBinaryArr = BL.Class1.Adder(BL.Class1.rndInputBinaryArr, BL.Class1.outputBinaryArr, rsize);
+
+                            // show result
+                            //C-שארית Z-תוצאה
+                            Image z = new Image();
+                            z.Margin = new Thickness(381, 235, 372, 120);
+
+                            if (BL.Class1.outputBinaryArr[0] == 0)
+                            {
+                                z.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
                             }
                             else
                             {
-                                carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
+                                z.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
                             }
-                            grid11.Children.Add(carray[i]);
+                            grid11.Children.Add(z);
 
-                        }
-                        break;
-                    }
-                case "hmechaber":
-                case "mechaber":
-                    {
-                        // set expected result
-                        BL.Class1.outputBinaryArr = BL.Class1.Adder(BL.Class1.rndInputBinaryArr, BL.Class1.outputBinaryArr, rsize);
-
-                        // show result
-                        //C-שארית Z-תוצאה
-                        Image z = new Image();
-                        z.Margin = new Thickness(381, 235, 372, 120);
-
-                        if (BL.Class1.outputBinaryArr[0] == 0)
-                        {
-                            z.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
-                        }
-                        else
-                        {
-                            z.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
-                        }
-                        grid11.Children.Add(z);
-
-                        Image c = new Image();
-                        c.Margin = new Thickness(272, 235, 481, 120);
-                        if (BL.Class1.outputBinaryArr[1] == 0)
-                        {
-                            c.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
-                        }
-                        else
-                        {
-                            c.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
-                        }
-                        if (rsize == 3)
-                        {
-                            c.Margin = new Thickness(272, 227, 484, 130);
-                            z.Margin = new Thickness(365, 235, 391, 122);
-                        }
-
-                        grid11.Children.Add(c);
-                        break;
-                    }
-
-                case "merabev":
-                    {
-                        // set expected result
-                        BL.Class1.outputBinary = BL.Class1.Multiplexer(BL.Class1.rndInput2BinaryArr, BL.Class1.rndInputBinaryArr);
-
-                        // show result
-                        Image y = new Image();
-                        int ya = 0, yb = 0, yc = 0, yd = 0;
-                        switch (rsize)
-                        {
-                            case 2:
-                                ya = 480; yb = 120; yc = 270; yd = 265;
-                                break;
-                            case 3:
-                                ya = 478; yb = 125; yc = 267; yd = 259;
-                                break;
-                            case 4:
-                                ya = 480; yb = 97; yc = 271; yd = 233;
-                                break;
-                        }
-                        y.Margin = new Thickness(ya, yb, yc, yd);
-
-                        if (BL.Class1.outputBinary == 0)
-                        {
-                            y.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
-                        }
-                        else
-                        {
-                            y.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
-                        }
-
-                        grid11.Children.Add(y);
-                        break;
-
-                    }
-
-                case "mefaaneah":
-                    {
-                        // set expected result
-
-                        BL.Class1.outputBinaryArr = BL.Class1.Decoder(BL.Class1.rndInputBinaryArr, BL.Class1.refOutputBinaryArr);
-                        // show result
-                        int ya, yb, yc, yd, hy;
-                        ya = 483; yb = 45; yc = 269; yd = 285; hy = 44;
-                        
-                        if (rsize == 3)
-                        {
-                            ya = 484; yb = 31; yc = 275; yd = 307; hy = 24;
-                        }
-                        if (rsize == 4)
-                        {
-                            ya = 487; yb = 33; yc = 284; yd = 334; hy = 13;
-                        }
-                        Image[] carray = new Image[(int)Math.Pow(2, rsize)];
-                        for (int i = 0; i < (int)Math.Pow(2, rsize); i++)
-                        {
-                            carray[i] = new Image();
-                            carray[i].Margin = new Thickness(ya, yb, yc, yd);
-                            yb += hy; yd -= hy;
-                            if (BL.Class1.outputBinaryArr[i] == 0)
+                            Image c = new Image();
+                            c.Margin = new Thickness(272, 235, 481, 120);
+                            if (BL.Class1.outputBinaryArr[1] == 0)
                             {
-                                carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
+                                c.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
                             }
                             else
                             {
-                                carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
+                                c.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
                             }
-                            grid11.Children.Add(carray[i]);
+                            if (rsize == 3)
+                            {
+                                c.Margin = new Thickness(272, 227, 484, 130);
+                                z.Margin = new Thickness(365, 235, 391, 122);
+                            }
+
+                            grid11.Children.Add(c);
+                            break;
                         }
-                        break;
-                    }
+
+                    case "merabev":
+                        {
+                            // set expected result
+                            BL.Class1.outputBinary = BL.Class1.Multiplexer(BL.Class1.rndInput2BinaryArr, BL.Class1.rndInputBinaryArr);
+
+                            // show result
+                            Image y = new Image();
+                            int ya = 0, yb = 0, yc = 0, yd = 0;
+                            switch (rsize)
+                            {
+                                case 2:
+                                    ya = 480; yb = 120; yc = 270; yd = 265;
+                                    break;
+                                case 3:
+                                    ya = 478; yb = 125; yc = 267; yd = 259;
+                                    break;
+                                case 4:
+                                    ya = 480; yb = 97; yc = 271; yd = 233;
+                                    break;
+                            }
+                            y.Margin = new Thickness(ya, yb, yc, yd);
+
+                            if (BL.Class1.outputBinary == 0)
+                            {
+                                y.Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
+                            }
+                            else
+                            {
+                                y.Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
+                            }
+
+                            grid11.Children.Add(y);
+                            break;
+
+                        }
+
+                    case "mefaaneah":
+                        {
+                            // set expected result
+
+                            BL.Class1.outputBinaryArr = BL.Class1.Decoder(BL.Class1.rndInputBinaryArr, BL.Class1.refOutputBinaryArr);
+                            // show result
+                            int ya, yb, yc, yd, hy;
+                            ya = 483; yb = 45; yc = 269; yd = 285; hy = 44;
+
+                            if (rsize == 3)
+                            {
+                                ya = 484; yb = 31; yc = 275; yd = 307; hy = 24;
+                            }
+                            if (rsize == 4)
+                            {
+                                ya = 487; yb = 33; yc = 284; yd = 334; hy = 13;
+                            }
+                            Image[] carray = new Image[(int)Math.Pow(2, rsize)];
+                            for (int i = 0; i < (int)Math.Pow(2, rsize); i++)
+                            {
+                                carray[i] = new Image();
+                                carray[i].Margin = new Thickness(ya, yb, yc, yd);
+                                yb += hy; yd -= hy;
+                                if (BL.Class1.outputBinaryArr[i] == 0)
+                                {
+                                    carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c0.png", UriKind.Relative));
+                                }
+                                else
+                                {
+                                    carray[i].Source = new BitmapImage(new Uri(@"..\IMG1\c1.png", UriKind.Relative));
+                                }
+                                grid11.Children.Add(carray[i]);
+                            }
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                MessageBox.Show("חזור לאחור להדגמה חוזרת");
+            }
 
             }
-        }
+        
 
        
 

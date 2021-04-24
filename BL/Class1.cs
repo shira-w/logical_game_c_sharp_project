@@ -36,7 +36,7 @@ namespace BL
         {
             for (int i = 0; i < length; i++)
             {
-                array[i] = 0;
+                outputBinaryArr[i] = 0;
             }
         }
         public static void ResetInputs()

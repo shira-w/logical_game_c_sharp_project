@@ -25,13 +25,16 @@ namespace project2020
     /// </summary>
     public partial class savedpractice : Window
     {
-        string type;
+        public string type;
+        int size = 0;
+        int[] arr1;
+        int[] arr2;
         XDocument xmlDoc = new XDocument();
         public savedpractice()
         {
             InitializeComponent();
-           FillDataGrid();
-          //  grdEmployee.MouseDown += new System.Windows.Input.MouseEventHandler(this.myDataGrid_MouseDown);
+            FillDataGrid();
+            //  grdEmployee.MouseDown += new System.Windows.Input.MouseEventHandler(this.myDataGrid_MouseDown);
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
@@ -46,16 +49,16 @@ namespace project2020
             string ConString = @"Server=LAPTOP-0SA5RLTP;Initial Catalog = efratDB;Trusted_Connection=True;";
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
-            {               
-                
+            {
+
                 CmdString = "SELECT id,name,date,type  FROM GameTable";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("GameTable");
-               sda.Fill(dt);
-                grdEmployee.ItemsSource = dt.DefaultView;      
+                sda.Fill(dt);
+                grdEmployee.ItemsSource = dt.DefaultView;
             }
-            
+
         }
         private void DataGrid_MouseRightButtonUp_1(object sender, MouseButtonEventArgs e)
         {
@@ -67,7 +70,7 @@ namespace project2020
             DataGridRow r2 = DataGridRow.GetRowContainingElement(targetCell);
             if (r2 != null)
             {
-                int rowindex = r2.GetIndex() + 10004;
+                int rowindex = r2.GetIndex() + 19976;
                 // At this point targetCell should be the cell that was clicked or null if something went wrong.
                 SqlConnection con = new SqlConnection(@"Server=LAPTOP-0SA5RLTP;Initial Catalog = efratDB;Trusted_Connection=True;");
                 string query = string.Format("SELECT type, carray From GameTable Where id={0}", rowindex);
@@ -83,106 +86,31 @@ namespace project2020
                 }
                 con.Close();
             }
+
+            string[] pathsList = xmlDoc.Descendants("item").Select(x => x.Value).ToArray();
+            arr1 = new int[pathsList.Length];
             
-            string [] pathsList = xmlDoc.Descendants("item").Select(x => x.Value).ToArray();
-            int[] arr1 = new int [pathsList.Length];
-            int size = 0;
-            int [] arr2 = new int[pathsList.Length];
+            arr2 = new int[pathsList.Length];
             int i;
-            for (i=0; i< pathsList.Length; i++)
+            for (i = 0; i < pathsList.Length; i++)
             {
-                if (pathsList[i]=="-2")
+                if (pathsList[i] == "-2")
                 {
                     break;
                 }
-                arr1[i] =Int32.Parse( pathsList[i]);
+                arr1[i] = Int32.Parse(pathsList[i]);
                 size++;
             }
             int t = 0;
-            for (int k=i+1; k < pathsList.Length; k++)
+            for (int k = i + 1; k < pathsList.Length; k++)
             {
                 arr2[t] = Int32.Parse(pathsList[k]);
                 t++;
             }
-            switch (type)
-            {
-                case "merabev":
-                    {
-                        newpractice newpractice = new newpractice();
-                        newpractice.Show();
 
-                        if (size == 2)
-                        {
-                            newpractice.merabevAfterSave(2, 378, 222, 372, 108, 250, 45, 500, 287, 44, 32, 198, 197, 283, 56, 0, 0, 480, 98, 283, 243 ,arr1,arr2);
-                        }
-                        else if (size == 3)
-                        {
-                            newpractice.merabevAfterSave(3, 391, 246, 362, 126, 262, 64, 505, 326, 34, 20, 198, 197, 283, 62, 0, 0, 480, 110, 283, 231, arr1,arr2);
-                        }
-                        else if (size == 4)
-                        {
-                            newpractice.merabevAfterSave(4, 415, 254, 350, 128, 268, 48, 506, 341, 29, 11, 212, 210, 283, 54, 0, 0, 493, 107, 270, 234, arr1,arr2);
-                        }
-                        this.Close(); 
-                        //newpractice.merabevAfterSave(xmlDoc);
-                        break;
-                    }
-                case "mefaaneah":
-                    {
-                        newpractice newpractice = new newpractice();
-                        newpractice.Show();
-                        if (size == 2)
-                        {
-                            newpractice.mefaanehAfterSave(2, 245, 83, 505, 249, 493, 62, 270, 279, 68, 40, 197, 213, 280, 66, 0, 0,arr1);
-                        }
-                        else if (size == 3)
-                        {
-                            newpractice.mefaanehAfterSave(3, 210, 87, 515, 293, 494, 46, 277, 314, 59, 25, 226, 235, 258, 53, 0, 0, arr1);
-                        }
-                        else if (size == 4)
-                        {      
-                            newpractice.mefaanehAfterSave(4, 209, 68, 523, 312, 505, 40, 276, 342, 50, 14, 238, 250, 255, 47, 0, 0, arr1);
-                        }
-                        this.Close();
-                        break;
-                    }
-                case "mg":
-                    {
-                        newpractice newpractice = new newpractice();
-                        newpractice.Show();
-                        if (size == 2)
-                        {
-                            newpractice.mgAfterSave(2, 20, 331, 35, 430, 315, 392, 35, 369, 315,arr1,arr2);
-                        }
-                        if (size == 3)
-                        {
-                            newpractice.mgAfterSave(3, 18, 326, 37, 437, 314, 387, 37, 376, 314, arr1, arr2);
-                        }
-                        if (size == 4)
-                        {
-                            newpractice.mgAfterSave(4, 12, 324, 39, 441, 313, 387, 39, 378, 313, arr1, arr2);
-                        }
-                        this.Close();
-                        break;
-                    }
-                case "hmechaber":
-                    {
-                        newpractice newpractice = new newpractice();
-                        newpractice.Show();
-                        newpractice.hzmechaberafterSave(2,arr1);
-                        this.Close();
-                        break;
-                    }
-                case "mechaber":
-                    {
-                        newpractice newpractice = new newpractice();
-                        newpractice.Show();
-                        newpractice.hzmechaberafterSave(3,arr1);
-                        this.Close();
-                        break;
-                    }
-            }
+
         }
+
         /*
         private void myDataGrid_MouseDown(object sender,System.Windows.Input.MouseEventArgs e)
         {
@@ -247,23 +175,131 @@ namespace project2020
         private void ok_click(object sender, RoutedEventArgs e)
         {
 
-
-            /*switch (type)
-        {
-            case "mg":
-                {
-                    break;
-                }
-
-                case "hmechaber":
+            switch (type)
+            {
+                case "Multiplexer":
                     {
-                    break;
-                }*/
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+
+                        if (size == 2)
+                        {
+                            newpractice.merabevAfterSave(2, 378, 222, 372, 108, 250, 45, 500, 287, 44, 32, 198, 197, 283, 56, 0, 0, 480, 98, 283, 243, arr1, arr2);
+                        }
+                        else if (size == 3)
+                        {
+                            newpractice.merabevAfterSave(3, 391, 246, 362, 126, 262, 64, 505, 326, 34, 20, 198, 197, 283, 62, 0, 0, 480, 110, 283, 231, arr1, arr2);
+                        }
+                        else if (size == 4)
+                        {
+                            newpractice.merabevAfterSave(4, 415, 254, 350, 128, 268, 48, 506, 341, 29, 11, 212, 210, 283, 54, 0, 0, 493, 107, 270, 234, arr1, arr2);
+                        }
+                        this.Close();
+                        //newpractice.merabevAfterSave(xmlDoc);
+                        break;
+                    }
+                case "Decoder":
+                    {
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+                        if (size == 2)
+                        {
+                            newpractice.mefaanehAfterSave(2, 245, 83, 505, 249, 493, 62, 270, 279, 68, 40, 197, 213, 280, 66, 0, 0, arr1);
+                        }
+                        else if (size == 3)
+                        {
+                            newpractice.mefaanehAfterSave(3, 210, 87, 515, 293, 494, 46, 277, 314, 59, 25, 226, 235, 258, 53, 0, 0, arr1);
+                        }
+                        else if (size == 4)
+                        {
+                            newpractice.mefaanehAfterSave(4, 209, 68, 523, 312, 505, 40, 276, 342, 50, 14, 238, 250, 255, 47, 0, 0, arr1);
+                        }
+                        this.Close();
+                        break;
+                    }
+                case "Compares size":
+                    {
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+                        if (size == 2)
+                        {
+                            newpractice.mgAfterSave(2, 20, 331, 35, 430, 315, 392, 35, 369, 315, arr1, arr2);
+                        }
+                        if (size == 3)
+                        {
+                            newpractice.mgAfterSave(3, 18, 326, 37, 437, 314, 387, 37, 376, 314, arr1, arr2);
+                        }
+                        if (size == 4)
+                        {
+                            newpractice.mgAfterSave(4, 12, 324, 39, 441, 313, 387, 39, 378, 313, arr1, arr2);
+                        }
+                        this.Close();
+                        break;
+                    }
+                case "Half connective":
+                    {
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+                        newpractice.hzmechaberafterSave(2, arr1);
+                        this.Close();
+                        break;
+                    }
+                case "connective":
+                    {
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+                        newpractice.hzmechaberafterSave(3, arr1);
+                        this.Close();
+                        break;
+                    }
+                case "encoder":
+                    {
+                        newpractice newpractice = new newpractice();
+                        newpractice.Show();
+                        if (size == 2)
+                        {
+                            // int size, int ca, int cb, int cc, int cd, int ya, int yb, int yc, int yd, int hc, int hy, int gridh, int gridw, int grida, int gridb, int gridc, int gridd
+                            newpractice.mkddAfterSave(2, 235, 59, 515, 273, 494, 92, 269, 248, 44, 71, 212, 222, 271, 64, 0, 0, arr1);
+
+                        }
+
+
+                        if (size == 3)
+                        {
+
+                            newpractice.mkddAfterSave(3, 245, 51, 516, 302, 493, 73, 270, 267, 24, 54, 212, 222, 271, 64, 0, 0, arr1);
+                        }
+
+
+                        if (size == 4)
+                        {
+
+                            newpractice.mkddAfterSave(4, 255, 48, 519, 328, 494, 59, 269, 280, 13, 46, 212, 222, 271, 64, 0, 0, arr1);
+
+
+                        }
+                        this.Close();
+                        break;
+                    }
+
+                    /*switch (type)
+                {
+                    case "mg":
+                        {
+                            break;
+                        }
+
+                        case "hmechaber":
+                            {
+                            break;
+                        }*/
+            }
         }
 
         private void grdEmployee_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
+
     }
 }

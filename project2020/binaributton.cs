@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Media;
 
 namespace project2020
 {
@@ -19,6 +20,7 @@ namespace project2020
       int muflag = 1; /*צליל*/
 
 
+        public int anableAudio { get; set; } = 0;
         enum LogicalType
         {
             Practice                    = 1,
@@ -27,7 +29,7 @@ namespace project2020
         }
 
         private LogicalType TemplatePartAttribute;
-
+        private MediaPlayer mediaPlayer;
 
         //בנאי שלא מקבל מיקום
 
@@ -67,7 +69,10 @@ namespace project2020
         //פונקציה להחלפת התמונה בלחיצה
         void binaributton_Mouseclick(object sender, EventArgs e)
         {
-               
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"1.mp3", UriKind.Relative));
+            mediaPlayer.Play();
+            //new SoundPlayer(@"../audio/1.wav").Play();
             if (this.flag == 0)
             {
                 this.Source = new BitmapImage(new Uri(@"../IMG1/11.png", UriKind.Relative));

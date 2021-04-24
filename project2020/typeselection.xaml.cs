@@ -24,7 +24,7 @@ namespace project2020
       public int part = 0; //תרגול או הדגמה
       public  string type;
       public int size=0;
-
+        private MediaPlayer mediaPlayer;
         public typeselection()
         {
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace project2020
 
         private void mfan_click(object sender, RoutedEventArgs e)
         {
+           
             type = "mefaaneah";
             selectsizeopen();
         }
@@ -56,23 +57,38 @@ namespace project2020
 
         private void hemchaber_click(object sender, RoutedEventArgs e)
         {
-           type = "hmechaber";
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"223445__six-ways__mouse-click.wav", UriKind.Relative));
+            mediaPlayer.Play();
+            type = "hmechaber";
         }
         private void mechaber_click(object sender, RoutedEventArgs e)
         {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"223445__six-ways__mouse-click.wav", UriKind.Relative));
+            mediaPlayer.Play();
             type = "mechaber";
         }
 
         private void tw_click(object sender, RoutedEventArgs e)
         {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"223445__six-ways__mouse-click.wav", UriKind.Relative));
+            mediaPlayer.Play();
             size = 2;
         }
         private void th_click(object sender, RoutedEventArgs e)
         {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"223445__six-ways__mouse-click.wav", UriKind.Relative));
+            mediaPlayer.Play();
             size = 3;
         }
         private void f_click(object sender, RoutedEventArgs e)
         {
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.Open(new Uri(@"223445__six-ways__mouse-click.wav", UriKind.Relative));
+            mediaPlayer.Play();
             size = 4;
         }
 
@@ -229,6 +245,41 @@ namespace project2020
 
                             break;
                         }
+                    case "mkdd":
+                        {
+
+                            if (size == 0)
+                                MessageBox.Show("אנא בחר מספר כניסות לרכיב");
+                            if (size == 2)
+                            {
+                                newpractice newpractice = new newpractice();
+                                newpractice.Show();// int size, int ca, int cb, int cc, int cd, int ya, int yb, int yc, int yd, int hc, int hy, int gridh, int gridw, int grida, int gridb, int gridc, int gridd
+                                newpractice.addmkdd(2, 235, 59, 515, 273, 494, 92, 269, 248, 44, 71, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+                            }
+
+
+                            if (size == 3)
+                            {
+                                newpractice newpractice = new newpractice();
+                                newpractice.Show();
+                                newpractice.addmkdd(3, 245, 51, 516, 302, 493, 73, 270, 267, 24, 54, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+                            }
+
+
+                            if (size == 4)
+                            {
+                                newpractice newpractice = new newpractice();
+                                newpractice.Show();
+                                newpractice.addmkdd(4, 255, 48, 519, 328, 494, 59, 269, 280, 13, 46, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+
+                            }
+
+                            break;
+                        }
+
                 }
 
             }
@@ -239,6 +290,43 @@ namespace project2020
             {
                 switch (type)
                 {
+                    case "mkdd":
+                        {
+
+
+                            if (size == 0)
+                                MessageBox.Show("אנא בחר מספר כניסות לרכיב");
+                            if (size == 2)
+                            {
+                                Illustration illustration = new Illustration();
+                                illustration.Show();
+                                illustration.illuaddmkdd(2, 240, 67, 524, 282, 44, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+                            }
+
+                            //int size, int ca, int cb, int cc, int cd, int hc, int gridh, int gridw, int grida, int gridb, int gridc, int gridd
+                            if (size == 3)
+                            {
+                                Illustration illustration = new Illustration();
+                                illustration.Show();
+                                illustration.illuaddmkdd(3, 247, 53, 523, 304, 24, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+                            }
+
+
+                            if (size == 4)
+                            {
+                                Illustration illustration = new Illustration();
+                                illustration.Show();
+                                illustration.illuaddmkdd(4, 259, 46, 523, 325, 13, 212, 222, 271, 64, 0, 0);
+                                this.Close();
+
+                            }
+
+                            break;
+                        }
+
+
                     case "mg":
                         {
                             if (size == 0)

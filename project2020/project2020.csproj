@@ -242,5 +242,8 @@
     <Resource Include="IMG1\clos1.png" />
     <Content Include="IMG1\ding.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="audio\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
